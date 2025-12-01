@@ -26,7 +26,7 @@ public class ProductService implements ProductServiceInterface {
         this.mapper = mapper;
     }
 
-    // 1️⃣ Fetch products from API and return as DTOs
+    // Fetch products from API and return as DTOs
     @Override
     public List<ProductDTO> fetchProductsFromApi() {
         Product[] products = restTemplate.getForObject(FAKE_STORE_API, Product[].class);
@@ -35,7 +35,7 @@ public class ProductService implements ProductServiceInterface {
                 .collect(Collectors.toList());
     }
 
-    // 2️⃣ Save API products to MySQL and return as DTOs
+    // Save API products to MySQL and return as DTOs
     @Override
     public List<ProductDTO> saveProductsFromApi() {
         List<Product> apiProducts = Arrays.asList(
@@ -47,7 +47,7 @@ public class ProductService implements ProductServiceInterface {
                 .collect(Collectors.toList());
     }
 
-    // 3️⃣ Get all products from DB
+    // Get all products from DB
     @Override
     public List<ProductDTO> getAllProducts() {
         return repository.findAll()
@@ -56,7 +56,7 @@ public class ProductService implements ProductServiceInterface {
                 .collect(Collectors.toList());
     }
 
-    // 4️⃣ Create new product
+    // Create new product
     @Override
     public ProductDTO createProduct(ProductDTO dto) {
         Product product = mapper.toEntity(dto);
@@ -64,7 +64,7 @@ public class ProductService implements ProductServiceInterface {
         return mapper.toDTO(saved);
     }
 
-    // 5️⃣ Update existing product
+    // Update existing product
     @Override
     public ProductDTO updateProduct(Long id, ProductDTO dto) {
         Product product = mapper.toEntity(dto);
@@ -73,13 +73,13 @@ public class ProductService implements ProductServiceInterface {
         return mapper.toDTO(updated);
     }
 
-    // 6️⃣ Delete product
+    //6Delete product
     @Override
     public void deleteProduct(Long id) {
         repository.deleteById(id);
     }
 
-    // 7️⃣ Get all distinct categories
+    // Get all distinct categories
     @Override
     public List<String> getAllCategories() {
         return repository.findAll()

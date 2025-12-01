@@ -7,7 +7,7 @@ const bagContainer = document.querySelector(".bag-items-container");
 const totalPriceEl = document.getElementById("total-price");
 const checkoutBtn = document.getElementById("checkout-btn");
 
-// Load all products from API
+
 async function loadProducts() {
     try {
         const response = await fetch(API_URL);
@@ -19,7 +19,7 @@ async function loadProducts() {
     }
 }
 
-// Display bag items on left panel
+
 function displayBagItems() {
     bagContainer.innerHTML = "";
 
@@ -46,7 +46,7 @@ function displayBagItems() {
     });
 }
 
-// Remove an item from the bag
+
 function removeFromBag(index) {
     bagItems.splice(index, 1);
     localStorage.setItem("bagItems", JSON.stringify(bagItems));
@@ -54,7 +54,7 @@ function removeFromBag(index) {
     updateTotal();
 }
 
-// Update total price
+
 function updateTotal() {
     let total = 0;
     bagItems.forEach(productId => {
@@ -64,7 +64,7 @@ function updateTotal() {
     totalPriceEl.innerText = total.toFixed(2);
 }
 
-// Checkout
+
 if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
         if (bagItems.length === 0) {
@@ -75,7 +75,7 @@ if (checkoutBtn) {
     });
 }
 
-// Initialize
+
 document.addEventListener("DOMContentLoaded", () => {
     loadProducts();
 });
