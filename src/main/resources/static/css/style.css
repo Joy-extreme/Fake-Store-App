@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Assistant,-apple-system,BlinkMacSystemFont,Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    background-color: #ffffff;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #b6b1b1;
+}
+.myntra_home {
+    height: 45px;
+}
+.logo_container {
+    margin-left: 4%;
+}
+.action_bar {
+    margin-right: 4%;
+}
+.search_bar {
+    height: 40px;
+    min-width: 200px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.search_icon {
+    box-sizing: content-box;
+    height: 20px;
+    padding: 10px;
+    background-color: #f5f5f6;
+    color: #282c3f;
+    font-weight: 300;
+    border-radius: 4px 0 0 4px;
+}
+.search_input {
+    color: #696e79;
+    background-color: #f5f5f6;
+    flex-grow: 1;
+    height: 40px;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+}
+.action_bar {
+    display: flex;
+    min-width: 200px;
+    justify-content: space-evenly;
+}
+.action_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    margin-left: 10px;
+    border: 1px solid #0088FF;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0088FF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 40px;
+}
+.login-link:hover {
+    background-color: #0088FF;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.filter-bar {
+    width: 80%;
+    margin: 20px 10%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    background-color: #f5f5f6;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: Assistant, sans-serif;
+}
+.filter-bar label {
+    font-weight: 700;
+    color: #282c3f;
+    font-size: 14px;
+}
+#category-select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+#category-select:hover {
+    border-color: #6c63ff;
+}
+#category-select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108,99,255,0.3);
+}
+#min-price, #max-price {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    width: 80px;
+    transition: all 0.3s ease;
+}
+
+#min-price:hover, #max-price:hover {
+    border-color: #6c63ff;
+}
+
+#min-price:focus, #max-price:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108,99,255,0.3);
+}
+
+#apply-price-filter {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #6c63ff;
+    background-color: #6c63ff;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#apply-price-filter:hover {
+    background-color: #5750d4;
+}
+
+#add-product-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #6c63ff;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+#add-product-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #282c3f;
+    text-align: center;
+}
+.modal-content-style {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.modal-content-style:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108,99,255,0.3);
+}
+.modal-content button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6c63ff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.modal-content button:hover {
+    background-color: #5750d4;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+}
+.close-btn:hover {
+    color: #6c63ff;
+}
+.items-container {
+    width: 80%;
+    margin: 5% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+.item-container {
+    flex: 1 1 200px;
+    max-width: 200px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.item-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.item-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.brand-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #282c3f;
+    margin-bottom: 6px;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.item-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #282c3f;
+    margin: 5px 0;
+}
+.Original-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #282c3f;
+}
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 10px;
+}
+.edit-delete-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+}
+.edit-btn, .delete-btn {
+    flex: 1;
+    padding: 6px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+.edit-btn {
+    background-color: #90ee90;
+}
+.edit-btn:hover {
+    background-color: #76d776;
+}
+.delete-btn {
+    background-color: #e74c3c;
+}
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+.add-to-bag-row {
+    width: 100%;
+}
+.add-to-bag-button {
+    margin-top: 0;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 8px 0;
+    background-color: #0088FF;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-to-bag-button:hover {
+    background-color: #006FCC;
+}
+.add-to-bag-count {
+    background-color: #f16565;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 18px;
+    padding: 0 6px;
+    height: 18px;
+    position: relative;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+    left: 13px;
+    top: -44px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #6c63ff;
+    background-color: #fff;
+    color: #6c63ff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #6c63ff;
+    color: #fff;
+}
+
+.pagination button.active {
+    background-color: #6c63ff;
+    color: #fff;
+    border: 1px solid #6c63ff;
+}
