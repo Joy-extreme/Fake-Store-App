@@ -1,9 +1,8 @@
-# 🛒 Online Storefront
+# 🛒 Fake Store App
 
 A full-stack e-commerce web application developed using **Spring Boot**, **Spring Security**, **JWT Authentication**, and **JavaScript**,
-powered by the **Fake Store API**. This project was originally developed as a technical assignment for an internship interview and 
-was later enhanced with additional enterprise-level features to demonstrate backend architecture, authentication, authorization, and 
-modern web development practices.
+powered by the **Fake Store API**. This project was originally developed to learn backend architecture, authentication, authorization, and 
+modern web development practices using Spring Boot.
 
 ---
 
@@ -168,4 +167,6 @@ This project demonstrates practical experience with:
 ## 👨‍💻 Author
 
 **Joy Bhowmik**
+
+
 📧 Email: Joybhowmik67@gmail.com
