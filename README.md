@@ -1,14 +1,14 @@
 # 🛒 Fake Store App
 
 A full-stack e-commerce web application developed using **Spring Boot**, **Spring Security**, **JWT Authentication**, and **JavaScript**,
-powered by the **Fake Store API**. This project was originally developed to learn backend architecture, authentication, authorization, and 
+powered by the **Fake Store API**. This project is developed to learn backend architecture, authentication, authorization, and 
 modern web development practices using Spring Boot.
 
 ---
 
 ## 📌 Project Overview
 
-The Online Storefront application allows users to browse products, view detailed product information, search and filter products, 
+The Fake Store App allows users to browse products, view detailed product information, search and filter products, 
 and perform complete CRUD operations. The application integrates with the Fake Store API while utilizing a Spring Boot backend as
 the service layer.
 
